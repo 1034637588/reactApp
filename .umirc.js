@@ -7,16 +7,17 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages/index' },
+        { path: '/class', component: '../pages/class/index' }
       ]
     }
   ],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
-      antd: false,
-      dva: false,
-      dynamicImport: false,
+      antd: true,
+      dva: true,
+      dynamicImport: true,
       title: 'reactApp',
       dll: false,
       
