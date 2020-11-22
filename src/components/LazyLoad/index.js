@@ -14,15 +14,16 @@ export default class Index extends Component {
         const { component, delay, ...other } = this.props;
         console.log(component)
         if (!component || component.constructor.name != 'Promise') {
-            Lazy = import('./error');
-        }
-        Lazy = lazy(() => {
-            return new Promise(resolve => {
-                setTimeout(() => {
-                    resolve(component)
-                }, delay || 1000);
+            Lazy = lazy(()=>import('./error'));
+        }else{
+            Lazy = lazy(() => {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve(component)
+                    }, delay || 1000);
+                })
             })
-        })
+        }
         return <Lazy {...other}></Lazy>
     }
 

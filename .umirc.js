@@ -8,7 +8,8 @@ export default {
       component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/class', component: '../pages/class/index' }
+        { path: '/class', component: '../pages/class/index' },
+        { path: '/error', component: '../components/LazyLoad/error' }
       ]
     }
   ],
